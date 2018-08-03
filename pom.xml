@@ -7,7 +7,16 @@
         <version>0.1</version>
 	<packaging>pom</packaging>
         
-                
+    <properties>
+       <resteasy.version>2.3.3.Final</resteasy.version>
+    </properties>            
+
+	<dependencyManagement>
+	  <dependencies>
+	  	<!-- RESTEasy  -->
+	  	
+	  </dependencies>
+	</dependencyManagement>
 
 	<modules>
 		<module>lizard-server</module>
