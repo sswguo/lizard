@@ -12,4 +12,12 @@
 	<name>Lizard Server WEB</name>
 	<packaging>war</packaging>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.lizard.app.server</groupId>
+               <artifactId>lizard-server-client</artifactId>
+               <version>0.1</version>
+		</dependency>
+	</dependencies>
+
 </project>
