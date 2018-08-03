@@ -1,5 +1,8 @@
-# lizard
+## lizard
 
-### bootstrap [Y]
-### resteasy  []
+### bootstrap 
+### resteasy
+### cdi
+
+### jbossas
 
