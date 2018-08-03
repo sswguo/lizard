@@ -9,7 +9,7 @@
 	
 	<groupId>com.lizard.app.server</groupId>
 	<artifactId>lizard-server-web</artifactId>
-	<name>Lizard Server WAR</name>
+	<name>Lizard Server WEB</name>
 	<packaging>war</packaging>
 
 </project>
