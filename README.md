@@ -1,8 +1,8 @@
 ## lizard
 
-### bootstrap 
-### resteasy
-### cdi
+#### bootstrap 
+#### resteasy
+#### cdi
 
-### jbossas
+#### jbossas
 
