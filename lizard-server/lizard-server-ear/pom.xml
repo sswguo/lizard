@@ -12,4 +12,55 @@
 	<name>Lizard Server EAR</name>
 	<packaging>ear</packaging>
 
+        <dependencies>
+		<dependency>
+			<groupId>com.lizard.app.server</groupId>
+			<artifactId>lizard-server-ejb</artifactId>
+                        <version>0.1</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.lizard.app.server</groupId>
+			<artifactId>lizard-server-web</artifactId>
+                        <version>0.1</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+        
+	
+	<build>
+		<finalName>lizard</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<filtering>true</filtering>
+					<applicationName>Lizard</applicationName>
+					<displayName>Lizard</displayName>
+					<description>Lizard</description>
+					<version>6</version>
+					<filtering>true</filtering>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<initializeInOrder>true</initializeInOrder>
+					<modules>
+						<ejbModule>
+							<groupId>com.lizard.app.server</groupId>
+							<artifactId>lizard-server-ejb</artifactId>
+						</ejbModule>
+						<webModule>
+							<groupId>com.lizard.app.server</groupId>
+							<artifactId>lizard-server-web</artifactId>
+							<contextRoot>/lizard</contextRoot>
+						</webModule>
+					</modules>
+					<archive>
+						<manifestEntries>
+							<Dependencies>org.slf4j,org.dom4j</Dependencies>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
