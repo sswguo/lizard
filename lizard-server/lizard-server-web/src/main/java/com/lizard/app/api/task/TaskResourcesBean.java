@@ -3,15 +3,35 @@ package com.lizard.app.api.task;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+
+import com.lizard.app.model.Task;
+import com.lizard.app.services.TaskService;
+
+@RequestScoped
 public class TaskResourcesBean implements TaskResources {
 
+	@Inject TaskService taskService;
+
 	public List<TaskResource> listAllTasks() {
-		TaskResource tr = new TaskResource();
-		tr.setId(1);
-		tr.setName("Fee payment");
-		tr.setDescription("Test task");
+		List<Task> tasks = null;
+		try {
+			tasks = taskService.getTasks();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		List<TaskResource> trList = new ArrayList<TaskResource>();
-		trList.add(tr);
+
+		for (Task t : tasks) {
+			TaskResource tr = new TaskResource();
+			tr.setId(t.getId());
+			tr.setName(t.getName());
+			tr.setDescription(t.getDescription());
+			trList.add(tr);
+		}
+		
 		return trList;
 	}
 
