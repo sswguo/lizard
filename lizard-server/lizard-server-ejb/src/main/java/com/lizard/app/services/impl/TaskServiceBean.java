@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
+import com.lizard.app.dao.TaskDao;
 import com.lizard.app.model.Task;
 import com.lizard.app.services.TaskService;
 
@@ -13,13 +15,10 @@ import com.lizard.app.services.TaskService;
 @Local(TaskService.class)
 public class TaskServiceBean implements TaskService {
 
+	@Inject TaskDao taskDAO;
+
 	public List<Task> getTasks() throws Exception {
-		List<Task> tasks = new ArrayList<Task>();
-		Task t1 = new Task();
-		t1.setId(Long.valueOf(1));
-		t1.setName("task 1");
-		t1.setDescription("Lizard test task 1");
-		tasks.add(t1);
+		List<Task> tasks = taskDAO.queryAll();
 		return tasks;
 	}
 
