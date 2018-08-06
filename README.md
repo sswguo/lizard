@@ -1,8 +1,9 @@
 ## lizard
 
-#### bootstrap 
-#### resteasy
-#### cdi
+- [x] bootstrap 
+- [x] resteasy
+- [x] cdi
+- [x] JPA
 
-#### jbossas
+- [] jbossas
 
