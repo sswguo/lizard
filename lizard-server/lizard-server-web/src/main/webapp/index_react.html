@@ -1,6 +1,8 @@
 <html>
   <head>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap-table/4.3.1/react-bootstrap-table.min.css"></link>
+      
   </head>
   <body>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -10,6 +12,7 @@
   <div id="root"></div>
   <div id="e-list"></div>
   <div id="tasks"></div>
+  <div id="tasks-dt"></div>
 
   <!--  JQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -17,6 +20,10 @@
   <!-- React -->
   <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+
+  <!-- React-Bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.32.1/react-bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap-table/4.3.1/react-bootstrap-table.min.js"></script>
 
   <!-- Babel -->
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -106,7 +113,30 @@ ReactDOM.render(
   document.getElementById('tasks')
 );
 
+// react-bootstrap datatable
+
+$.ajax({
+      url: "rest/tasks",
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        ReactDOM.render(
+            <BootstrapTable data= {data} >
+               <TableHeaderColumn isKey dataField='id'>Task ID</TableHeaderColumn>
+	           <TableHeaderColumn dataField='name'>Task Name</TableHeaderColumn>
+	           <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
+            </BootstrapTable>,
+            document.getElementById('tasks-dt')
+        );
+      },
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }
+    });
+
+
 
   </script>
+
   </body>
 </html>
