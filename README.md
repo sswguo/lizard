@@ -1,9 +1,11 @@
 ## lizard
 
-- [x] bootstrap 
-- [x] resteasy
-- [x] cdi
+- [x] Bootstrap 
+- [x] React
+
+- [x] RESTEasy
+- [x] CDI
 - [x] JPA
 
-- [] jbossas
+- [x] JBossAS
 
