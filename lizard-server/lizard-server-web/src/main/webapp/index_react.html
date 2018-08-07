@@ -31,37 +31,20 @@
   <script type="text/jsx">
 
 
-class ScrollingList extends React.Component {
+class TitleComp extends React.Component {
 
   render() {
     return (
-      <div>My first component</div>
+      <div>React Page</div>
     );
   }
 }
 
   ReactDOM.render(
-		  <ScrollingList />	,
+		  <TitleComp />	,
 		  document.getElementById('root'));
 
 
-
-
-function NumberList(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) =>
-    <li>{number}</li>
-  );
-  return (
-    <ul>{listItems}</ul>
-  );
-}
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('e-list')
-);
 
 // Ajax call
 
@@ -114,14 +97,14 @@ ReactDOM.render(
 );
 
 // react-bootstrap datatable
-
+// http://allenfang.github.io/react-bootstrap-table/docs.html
 $.ajax({
       url: "rest/tasks",
       dataType: 'json',
       cache: false,
       success: function(data) {
         ReactDOM.render(
-            <BootstrapTable data= {data} >
+            <BootstrapTable data= {data} search headerStyle={ { background: '#e0ffe2' } }>
                <TableHeaderColumn isKey dataField='id'>Task ID</TableHeaderColumn>
 	           <TableHeaderColumn dataField='name'>Task Name</TableHeaderColumn>
 	           <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
