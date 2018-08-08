@@ -1,7 +1,7 @@
 <html>
   <head>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap-table/4.3.1/react-bootstrap-table.min.css"></link>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap-table/4.3.1/react-bootstrap-table.min.css">
       
   </head>
   <body>
@@ -9,8 +9,8 @@
    <a class="navbar-brand" href="#">Lizard</a>
   </nav>
   <hr/><hr/><hr />
+  <div id="router"></div>
   <div id="root"></div>
-  <div id="e-list"></div>
   <div id="tasks"></div>
   <div id="tasks-dt"></div>
 
@@ -27,9 +27,38 @@
 
   <!-- Babel -->
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- React Router -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.3.0/react-router-dom.min.js"></script>
   
   <script type="text/jsx">
 
+// React router
+
+const Router = window.ReactRouterDOM.BrowserRouter;
+const Route =  window.ReactRouterDOM.Route;
+const Link =  window.ReactRouterDOM.Link;
+const Prompt =  window.ReactRouterDOM.Prompt;
+const Switch = window.ReactRouterDOM.Switch;
+const Redirect = window.ReactRouterDOM.Redirect;
+
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+)
+
+ReactDOM.render(
+		  <Router >
+			<div>
+      		  <ul>
+                <li><Link to="/">Home</Link></li>
+        		<li><Link to="/about">About</Link></li>
+        		<li><Link to="/topics">Topics</Link></li>
+      		  </ul>
+          </div>
+		  </Router>	,
+		  document.getElementById('router'));
 
 class TitleComp extends React.Component {
 
@@ -116,8 +145,6 @@ $.ajax({
         console.error(this.props.url, status, err.toString());
       }
     });
-
-
 
   </script>
 
