@@ -18,15 +18,18 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
   <!-- React -->
-  <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
-
-  <!-- React-Bootstrap -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.32.1/react-bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap-table/4.3.1/react-bootstrap-table.min.js"></script>
+  <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
 
   <!-- Babel -->
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- React-Bootstrap -->
+  <!-- react-transition-group is required by reactstrap -->
+  <!-- https://shinglyu.github.io/web/2018/02/08/minimal-react-js-without-a-build-step-updated.html -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/2.4.0/react-transition-group.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/6.0.0/reactstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap-table/4.3.1/react-bootstrap-table.min.js"></script>
 
   <!-- React Router -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.3.0/react-router-dom.min.js"></script>
@@ -54,6 +57,7 @@ const Navigation = () => (
   <nav>
     <ul>
       <li><NavLink exact to='/'>Home</NavLink></li>
+      <li><NavLink exact to='/add'>Add Task</NavLink></li>
       <li><NavLink exact to='/about'>About</NavLink></li>
       <li><NavLink exact to='/contact'>Contact</NavLink></li>
     </ul>
@@ -80,9 +84,36 @@ const Contact = () => (
   </div>
 );
 
+const Button = window.Reactstrap.Button
+const Form =  window.Reactstrap.Form
+const FormGroup = window.Reactstrap.FormGroup
+const Label = window.Reactstrap.Label
+const Input = window.Reactstrap.Input
+const FormText =  window.Reactstrap.FormText
+
+class TaskForm extends React.Component {
+
+render() {
+    return (
+       <Form>
+        <FormGroup>
+          <Label for="taskName">Name</Label>
+          <Input type="text" name="taskName" id="taskName" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="taskDescription">Description</Label>
+          <Input type="text" name="taskDescription" id="taskDescription" />
+        </FormGroup>
+      </Form>
+    );
+  }
+
+}
+
 const Main = () => (
   <Switch>
     <Route exact path='/' component={Home}></Route>
+	<Route exact path='/add' component={TaskForm}></Route>
     <Route exact path='/about' component={About}></Route>
     <Route exact path='/contact' component={Contact}></Route>
   </Switch>
