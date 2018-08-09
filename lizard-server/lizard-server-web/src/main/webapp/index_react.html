@@ -34,7 +34,7 @@
   <!-- React Router -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.3.0/react-router-dom.min.js"></script>
   
-  <script type="text/jsx">
+  <script type="text/babel">
 
 // React router
 // React Router V4, nested routing demo (works without WebPack) https://codepen.io/schafeld/pen/yzvZPj?editors=1000
@@ -84,12 +84,7 @@ const Contact = () => (
   </div>
 );
 
-const Button = window.Reactstrap.Button
-const Form =  window.Reactstrap.Form
-const FormGroup = window.Reactstrap.FormGroup
-const Label = window.Reactstrap.Label
-const Input = window.Reactstrap.Input
-const FormText =  window.Reactstrap.FormText
+const {Button, Form, FormGroup, Label, Input, FormText} = Reactstrap
 
 class TaskForm extends React.Component {
 
