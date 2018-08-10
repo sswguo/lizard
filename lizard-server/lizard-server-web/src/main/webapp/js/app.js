@@ -18,10 +18,11 @@ const App = () => (
 const Navigation = () => (
   <nav>
     <ul>
-      <li><NavLink exact to='/'>Home</NavLink></li>
-      <li><NavLink exact to='/add'>Add Task</NavLink></li>
-      <li><NavLink exact to='/about'>About</NavLink></li>
-      <li><NavLink exact to='/contact'>Contact</NavLink></li>
+      <li><NavLink exact to='/lizard'>Home</NavLink></li>
+      <li><NavLink exact to='/lizard/add'>Add Task</NavLink></li>
+      <li><NavLink exact to='/lizard/examples'>React Examples</NavLink></li>
+      <li><NavLink exact to='/lizard/about'>About</NavLink></li>
+      <li><NavLink exact to='/lizard/contact'>Contact</NavLink></li>
     </ul>
   </nav>
 );
@@ -46,12 +47,39 @@ const Contact = () => (
   </div>
 );
 
+const Topic = () => (
+  <div>
+    <h3>test</h3>
+  </div>
+);
+
+const Examples = ({match}) => (
+	<div>
+	    <h2>React Examples</h2>
+	    <ul>
+	      <li>
+	        <NavLink to={`${match.url}/ajaxCalls`}>Ajax Call</NavLink>
+	      </li>
+	      <li>
+	        <NavLink to='/examples/dataTables'>DataTables</NavLink>
+	      </li>
+	    </ul>
+
+	    <Switch>
+	    	<Route path={`${match.url}/ajaxCalls`} component={TaskComponent} ></Route>
+	    	<Route path='/examples/dataTables' component={Topic} ></Route>
+	    	<Route exact path='/examples' render={() => <h4>Please select a example.</h4>}></Route>
+	    </Switch>
+	</div>
+);
+
 const Main = () => (
   <Switch>
-    <Route exact path='/' component={Home}></Route>
-	<Route exact path='/add' component={TaskForm}></Route>
-    <Route exact path='/about' component={About}></Route>
-    <Route exact path='/contact' component={Contact}></Route>
+    <Route exact path='/lizard' component={Home}></Route>
+	<Route exact path='/lizard/add' component={TaskForm}></Route>
+	<Route path='/lizard/examples' component={Examples}></Route>
+    <Route exact path='/lizard/about' component={About}></Route>
+    <Route exact path='/lizard/contact' component={Contact}></Route>
   </Switch>
 );
 

@@ -12,7 +12,7 @@ class TaskComponent extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: "rest/tasks",
+      url: "/lizard/rest/tasks",
       dataType: 'json',
       cache: false,
       success: function(data) {
@@ -42,7 +42,7 @@ class TaskComponent extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <TaskComponent />,
-  document.getElementById('tasks')
-);
+//ReactDOM.render(
+//  <TaskComponent />,
+//  document.getElementById('tasks')
+//);
