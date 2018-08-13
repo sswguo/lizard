@@ -30,7 +30,7 @@ class DataTableComponent extends React.Component{
       return <div>Error: {error.message}</div>;
     } else {
       return (
-	    <BootstrapTable data= {items} search headerStyle={ { background: '#e0ffe2' } }>
+	    <BootstrapTable data= {items} search headerStyle={ { background: '#e0ffe2' } } pagination>
            <TableHeaderColumn isKey dataField='id'>Task ID</TableHeaderColumn>
            <TableHeaderColumn dataField='name'>Task Name</TableHeaderColumn>
            <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
