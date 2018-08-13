@@ -75,6 +75,7 @@ const Examples = ({match}) => (
 );
 
 const Main = () => (
+  <div style={{marginLeft:15, marginRight:15, marginTop:75}}>
   <Switch>
     <Route exact path='/lizard' component={Home}></Route>
 	<Route exact path='/lizard/add' component={TaskForm}></Route>
@@ -82,6 +83,7 @@ const Main = () => (
     <Route exact path='/lizard/about' component={About}></Route>
     <Route exact path='/lizard/contact' component={Contact}></Route>
   </Switch>
+  </div>
 );
 
 ReactDOM.render(
