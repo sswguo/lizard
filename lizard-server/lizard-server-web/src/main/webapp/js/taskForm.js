@@ -14,13 +14,13 @@ class TaskForm extends React.Component {
 		  }),
 		  success: function(data) {
 			  ReactDOM.render(
-			   <UncontrolledAlert color="success">Create task successfully.</UncontrolledAlert>,
+			   <AlertComponent color="success" text="Create task successfully."/>,
 			   document.getElementById('alerts')
 			  );
 		  },
 		  error: function(xhr, status, err) {
 			  ReactDOM.render(
-			   <UncontrolledAlert color="danger">{xhr.responseText}</UncontrolledAlert>,
+			   <AlertComponent color="danger" text={xhr.responseText}/>,
 			   document.getElementById('alerts')
 			  );
 		  }
