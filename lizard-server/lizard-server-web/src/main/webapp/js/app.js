@@ -82,6 +82,7 @@ const Main = () => (
 	<Route path='/lizard/examples' component={Examples}></Route>
     <Route exact path='/lizard/about' component={About}></Route>
     <Route exact path='/lizard/contact' component={Contact}></Route>
+    <Route component={Home} />
   </Switch>
   </div>
 );
