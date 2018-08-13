@@ -16,9 +16,10 @@ const App = () => (
 );
 
 const Navigation = () => (
-  <nav>
-    <ul>
-      <li><NavLink exact to='/lizard'>Home</NavLink></li>
+  <nav className="navbar fixed-top bg-dark">
+    <ul className="nav nav-pills">
+      <a className="navbar-brand" href="#">Lizard</a>
+      <li className="active"><NavLink exact to='/lizard'>Home</NavLink></li>
       <li><NavLink exact to='/lizard/add'>Add Task</NavLink></li>
       <li><NavLink exact to='/lizard/examples'>React Examples</NavLink></li>
       <li><NavLink exact to='/lizard/about'>About</NavLink></li>
