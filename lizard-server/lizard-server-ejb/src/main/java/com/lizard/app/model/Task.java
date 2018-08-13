@@ -16,7 +16,7 @@ public class Task {
 
 	public static final String QUERY_ALL = "getAll";
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String description;

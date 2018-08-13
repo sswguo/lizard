@@ -22,4 +22,9 @@ public class TaskServiceBean implements TaskService {
 		return tasks;
 	}
 
+	public void createTask(Task task) throws Exception {
+		taskDAO.create(task);
+		
+	}
+
 }

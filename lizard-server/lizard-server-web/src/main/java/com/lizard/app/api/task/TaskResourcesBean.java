@@ -35,4 +35,16 @@ public class TaskResourcesBean implements TaskResources {
 		return trList;
 	}
 
+	public void createTask(TaskResource task) throws Exception {
+		Task t = new Task();
+		t.setName(task.getName());
+		t.setDescription(task.getDescription());
+		try {
+			taskService.createTask(t);
+		} catch (Exception e) {
+			throw e;
+		}
+		
+	}
+
 }
