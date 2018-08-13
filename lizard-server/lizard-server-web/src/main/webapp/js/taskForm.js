@@ -1,9 +1,30 @@
-const {Button, Form, FormGroup, Label, Input, FormText} = Reactstrap
+const {Button, Form, FormGroup, Label, Input, FormText, UncontrolledAlert} = Reactstrap
 
 class TaskForm extends React.Component {
 
   onTaskCommit(){
-	 alert("save");
+	  $.ajax({
+		  type: "POST",
+		  url: "/lizard/rest/tasks/add",
+		  contentType: 'application/json',
+		  dataType: "json",
+		  data: JSON.stringify({
+			  name: $("#taskName").val(),
+			  description: $("#taskDescription").val()
+		  }),
+		  success: function(data) {
+			  ReactDOM.render(
+			   <UncontrolledAlert color="success">Create task successfully.</UncontrolledAlert>,
+			   document.getElementById('alerts')
+			  );
+		  },
+		  error: function(xhr, status, err) {
+			  ReactDOM.render(
+			   <UncontrolledAlert color="danger">{xhr.responseText}</UncontrolledAlert>,
+			   document.getElementById('alerts')
+			  );
+		  }
+		});
   }
 
   render() {
