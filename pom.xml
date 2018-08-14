@@ -10,6 +10,7 @@
 
 	<properties>
 		<resteasy.version>2.3.3.Final</resteasy.version>
+		<log4j.version>2.11.1</log4j.version>
 	</properties>
 
 	<dependencyManagement>
@@ -58,6 +59,17 @@
 				<artifactId>resteasy-multipart-provider</artifactId>
 				<version>1.0.2.GA</version>
 			</dependency>
+			<!-- Log4j -->
+		    <dependency>
+		        <groupId>org.apache.logging.log4j</groupId>
+		        <artifactId>log4j-api</artifactId>
+		        <version>${log4j.version}</version>
+		    </dependency>
+		    <dependency>
+		        <groupId>org.apache.logging.log4j</groupId>
+		        <artifactId>log4j-core</artifactId>
+		        <version>${log4j.version}</version>
+		    </dependency>
 		</dependencies>
 	</dependencyManagement>
 

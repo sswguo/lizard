@@ -1,5 +1,7 @@
 package com.lizard.app.interceptors;
 
+import java.util.logging.Logger;
+
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
@@ -8,6 +10,8 @@ import javax.interceptor.InvocationContext;
 @Interceptor
 public class LoggedInterceptor {
 
+	private Logger log = Logger.getLogger(LoggedInterceptor.class.getName());
+
 	public LoggedInterceptor() {
 
 	}
@@ -15,7 +19,7 @@ public class LoggedInterceptor {
     @AroundInvoke
     public Object logMethodEntry(InvocationContext invocationContext)
             throws Exception {
-        System.out.println("Entering method: "
+        log.info("Entering method: "
                 + invocationContext.getMethod().getName() + " in class "
                 + invocationContext.getMethod().getDeclaringClass().getName());
 

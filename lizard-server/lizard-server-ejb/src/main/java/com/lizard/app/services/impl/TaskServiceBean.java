@@ -1,6 +1,7 @@
 package com.lizard.app.services.impl;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
