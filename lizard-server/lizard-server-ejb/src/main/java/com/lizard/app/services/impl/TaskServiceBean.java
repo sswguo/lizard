@@ -7,9 +7,9 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.lizard.app.dao.TaskDao;
+import com.lizard.app.interceptors.Logged;
 import com.lizard.app.model.Task;
 import com.lizard.app.services.TaskService;
-import com.lizard.app.services.logging.Logged;
 
 @Stateless
 @Local(TaskService.class)

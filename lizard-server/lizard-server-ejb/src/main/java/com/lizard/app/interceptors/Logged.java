@@ -1,4 +1,4 @@
-package com.lizard.app.services.logging;
+package com.lizard.app.interceptors;
 
 import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;

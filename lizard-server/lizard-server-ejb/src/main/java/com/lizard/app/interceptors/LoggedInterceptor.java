@@ -1,4 +1,4 @@
-package com.lizard.app.services.logging;
+package com.lizard.app.interceptors;
 
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
