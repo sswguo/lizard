@@ -1,0 +1,52 @@
+<html>
+<head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap-table/4.3.1/react-bootstrap-table.min.css">
+  </head>
+  <body>
+  <div id="form"></div>
+
+  <!--  JQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <!-- React -->
+  <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+
+  <!-- Babel -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- React-Bootstrap -->
+  <!-- react-transition-group is required by reactstrap -->
+  <!-- https://shinglyu.github.io/web/2018/02/08/minimal-react-js-without-a-build-step-updated.html -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/2.4.0/react-transition-group.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/6.0.0/reactstrap.min.js"></script>
+
+  <script type="text/babel">
+    const {Button, Form, FormGroup, Label, Input, FormText} = Reactstrap
+	class LoginForm extends React.Component {
+  		render() {
+           return(
+            <Form action="j_security_check" method="POST">
+			<FormGroup>
+          		<Label for="j_username">Username</Label>
+          		<Input type="text" name="j_username" id="j_username" />
+        	</FormGroup>
+        	<FormGroup>
+          		<Label for="j_password">Password</Label>
+          		<Input type="password" name="j_password" id="j_assword" />
+        	</FormGroup>
+			<Button>Submit</Button>
+            </Form>
+           );
+        }
+    }
+
+	ReactDOM.render(
+      <LoginForm />,
+      document.getElementById('form')
+    );
+  </script>
+  </body>
+
+</html>

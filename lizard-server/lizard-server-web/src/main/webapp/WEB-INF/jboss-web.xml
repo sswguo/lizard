@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <jboss-web>
+	<security-domain>LIZARD.COM</security-domain>
 	<context-root>lizard</context-root>
 </jboss-web>
