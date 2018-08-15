@@ -27,6 +27,7 @@
 	class LoginForm extends React.Component {
   		render() {
            return(
+			<div style={{ width: 600, margin: "auto", marginTop: 150 }}>
             <Form action="j_security_check" method="POST">
 			<FormGroup>
           		<Label for="j_username">Username</Label>
@@ -38,6 +39,7 @@
         	</FormGroup>
 			<Button>Submit</Button>
             </Form>
+            </div>
            );
         }
     }
