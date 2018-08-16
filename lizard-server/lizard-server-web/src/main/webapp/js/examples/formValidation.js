@@ -1,6 +1,11 @@
 const { AvForm, AvField, AvGroup, AvInput, AvFeedback, AvRadioGroup, AvRadio } = AvailityReactstrapValidation;
 const { Button, Label, FormGroup } = Reactstrap;
 
+const validateName = (value) => {
+	console.log(value)
+	return "Using custom validaton for Name"; 
+}
+
 class FormValidation extends React.Component {
   constructor(props) {
     super(props);
@@ -18,11 +23,11 @@ class FormValidation extends React.Component {
       <div>
         <AvForm onSubmit={this.handleSubmit}>
           {/* With AvField */}
-          <AvField name="name" label="Name" required />
+          <AvField name="name" label="Name" required validate = {{ validateName }}/>
           {/* With AvGroup AvInput and AvFeedback to build your own */}
           <AvGroup>
             <Label for="example">Rank</Label>
-            <AvInput name="rank" id="example" required />
+            <AvInput name="rank" id="example" required/>
             {/* this only shows when there is an error, use reactstrap's FormFeedback if you want is to always be displayed */}
             <AvFeedback>This field is required!</AvFeedback>
           </AvGroup>
