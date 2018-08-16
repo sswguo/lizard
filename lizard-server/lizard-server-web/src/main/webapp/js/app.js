@@ -65,6 +65,9 @@ const Examples = ({match}) => (
 	        <NavLink to={`${match.url}/dataTables`}>DataTables</NavLink>
 	      </li>
 	      <li>
+	        <NavLink to={`${match.url}/dataTablesAdvance`}>Advance DataTables</NavLink>
+	      </li>
+	      <li>
 	        <NavLink to={`${match.url}/formValidation`}>Form Validation</NavLink>
 	      </li>
 	    </ul>
@@ -72,6 +75,7 @@ const Examples = ({match}) => (
 	    <Switch>
 	    	<Route path={`${match.url}/ajaxCalls`} component={TaskComponent} ></Route>
 	    	<Route path={`${match.url}/dataTables`} component={DataTableComponent} ></Route>
+	    	<Route path={`${match.url}/dataTablesAdvance`} component={DataTableAdvanceComponent} ></Route>
 	    	<Route path={`${match.url}/formValidation`} component={FormValidation} ></Route>
 	    	<Route exact path='/examples' render={() => <h4>Please select a example.</h4>}></Route>
 	    </Switch>
