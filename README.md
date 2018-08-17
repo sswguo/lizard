@@ -15,5 +15,6 @@ Links:
 - https://www.fullstackreact.com/articles/redux-with-mark-erikson/
 - https://reactjs.org/docs/state-and-lifecycle.html
 - https://daveceddia.com/what-does-redux-do/
+- https://www.valentinog.com/blog/react-redux-tutorial-beginners/
 
 - https://jcp.org/en/home/index 
