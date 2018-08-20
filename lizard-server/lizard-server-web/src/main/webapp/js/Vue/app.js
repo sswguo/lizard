@@ -5,8 +5,11 @@
 
 // 1. Define route components.
 // These can be imported from other files
-const Foo = { template: '<div>foo</div>' }
+const examples = {
+		template: '<div><b-nav-item to="/examples/example1">ex1</b-nav-item><router-view></router-view></div>' 
+}
 const Bar = { template: '<div>bar</div>' }
+const ex1 = { template: '<div>example1</div>'}
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -14,7 +17,12 @@ const Bar = { template: '<div>bar</div>' }
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/foo', component: Foo },
+  { path: '/examples', component: examples,
+	  children: [{
+	             path: 'example1',
+	             component: ex1
+	  }]
+  },
   { path: '/bar', component: Bar }
 ]
 
