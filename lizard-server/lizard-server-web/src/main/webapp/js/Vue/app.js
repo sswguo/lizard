@@ -9,7 +9,7 @@ const examples = {
 		template: '<div><b-link to="/examples/example1">ex1</b-link><router-view></router-view></div>' 
 }
 const Bar = { template: '<div>bar</div>' }
-const ex1 = { template: '<div>example1</div>'}
+const ex1 = { template: '<div><b-form-input v-model="text1" type="text" placeholder="Enter your name"></b-form-input></div>'}
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -18,10 +18,10 @@ const ex1 = { template: '<div>example1</div>'}
 // We'll talk about nested routes later.
 const routes = [
   { path: '/examples', component: examples,
-	  children: [{
-	             path: 'example1',
-	             component: ex1
-	  }]
+    children: [{
+      path: 'example1',
+      component: ex1
+    }]
   },
   { path: '/bar', component: Bar }
 ]
