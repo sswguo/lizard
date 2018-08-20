@@ -1,5 +1,6 @@
 ## lizard
 
+````
 - [Bootstrap](https://getbootstrap.com/)
 - [React](https://reactjs.org/)
 
@@ -8,7 +9,7 @@
 - JPA
 
 - JBossAS
-
+````
 
 Links:
 ````
