@@ -6,7 +6,7 @@
 // 1. Define route components.
 // These can be imported from other files
 const examples = {
-		template: '<div><b-nav-item to="/examples/example1">ex1</b-nav-item><router-view></router-view></div>' 
+		template: '<div><b-link to="/examples/example1">ex1</b-link><router-view></router-view></div>' 
 }
 const Bar = { template: '<div>bar</div>' }
 const ex1 = { template: '<div>example1</div>'}
