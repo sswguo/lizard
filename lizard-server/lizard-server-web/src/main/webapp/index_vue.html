@@ -1,19 +1,29 @@
 <html>
 <head>
+
+<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+
 </head>
 <body>
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
+<script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+
+
 <div id="app">
   <h1>Hello App!</h1>
   <p>
+  	<b-nav pills>
     <!-- use router-link component for navigation. -->
     <!-- specify the link by passing the `to` prop. -->
     <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-    <router-link to="/foo">Go to Foo</router-link>
-    <router-link to="/bar">Go to Bar</router-link>
+    <b-nav-item to="/foo">Go to Foo</b-nav-item>
+    <b-nav-item to="/bar">Go to Bar</b-nav-item>
+    </b-nav>
   </p>
   <!-- route outlet -->
   <!-- component matched by the route will render here -->
