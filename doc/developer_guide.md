@@ -29,6 +29,11 @@ Add service method in TaskService/TaskServiceBean in lizard-server-ejb
 #### Interceptor
 Ref the example: com.lizard.app.interceptors.LoggedInterceptor
 - Define the inteceptor in: com.lizard.app.interceptors
+````
+@Interceptor
+public class LoggedInterceptor {
+}
+````
 - Declare it in the beans.xml 
 ````
 <interceptors>
