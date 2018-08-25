@@ -56,3 +56,25 @@ The project had default produced the java.util.logging.Logger, and using it via 
 @Inject @LizardLog Logger log;
 ````
 
+#### Web
+Currently there are examples using React and Vue.
+````
+.
+├── React
+│   ├── alertComponent.js
+│   ├── app.js
+│   ├── examples
+│   │   ├── ajaxCall.js
+│   │   ├── dataTableAdvance.js
+│   │   ├── dataTable.js
+│   │   ├── formValidation.js
+│   │   └── taskDetail.js
+│   ├── README.md
+│   └── taskForm.js
+└── Vue
+    ├── app.js
+    └── README.md
+
+````
+
+
