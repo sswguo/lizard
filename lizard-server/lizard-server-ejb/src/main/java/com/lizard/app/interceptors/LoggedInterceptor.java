@@ -2,15 +2,18 @@ package com.lizard.app.interceptors;
 
 import java.util.logging.Logger;
 
+import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
+
+import com.lizard.app.audit.LizardLog;
 
 @Logged
 @Interceptor
 public class LoggedInterceptor {
 
-	private Logger log = Logger.getLogger(LoggedInterceptor.class.getName());
+	@Inject @LizardLog Logger log;
 
 	public LoggedInterceptor() {
 

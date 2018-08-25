@@ -1,12 +1,14 @@
 package com.lizard.app.services.impl;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
+import com.lizard.app.audit.LizardLog;
 import com.lizard.app.dao.TaskDao;
 import com.lizard.app.event.TaskAdditionEvent;
 import com.lizard.app.interceptors.Logged;
@@ -19,6 +21,7 @@ public class TaskServiceBean implements TaskService {
 
 	@Inject TaskDao taskDAO;
 	@Inject Event<TaskAdditionEvent> taskAdditionEvent;
+	@Inject @LizardLog Logger log;
 
 	@Logged
 	public List<Task> getTasks() throws Exception {
@@ -27,6 +30,7 @@ public class TaskServiceBean implements TaskService {
 	}
 
 	public void createTask(Task task) throws Exception {
+		log.info("Test logger ....");
 		taskDAO.create(task);
 		// Fire the task addition event after create successfully
 		TaskAdditionEvent event = new TaskAdditionEvent();
