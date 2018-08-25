@@ -30,8 +30,15 @@ Add service method in TaskService/TaskServiceBean in lizard-server-ejb
 Ref the example: com.lizard.app.interceptors.LoggedInterceptor
 - Define the inteceptor in: com.lizard.app.interceptors
 ````
+@Logged
 @Interceptor
 public class LoggedInterceptor {
+}
+````
+The @Logged annotation is used to apply the interceptor to a bean:
+````
+@Logged
+public class TaskAdditionHandler implements Serializable {
 }
 ````
 - Declare it in the beans.xml 
