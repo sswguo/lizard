@@ -27,7 +27,7 @@
 		<!-- JEE 6 -->
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-6.0</artifactId>
+			<artifactId>jboss-javaee-7.0</artifactId>
 			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
@@ -39,6 +39,7 @@
 		<dependency>
 			<groupId>org.jboss.weld</groupId>
 			<artifactId>weld-core</artifactId>
+                        <scope>provided</scope>
 		</dependency>
 	</dependencies>
 
