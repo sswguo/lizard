@@ -20,6 +20,7 @@ Links:
 - https://www.valentinog.com/blog/react-redux-tutorial-beginners/
 - https://medium.com/fundbox-engineering/react-vs-vue-vs-angular-163f1ae7be56
 
+- https://github.com/javaee-samples
 - https://jcp.org/en/home/index 
 - https://fontawesome.com/free
 ````
