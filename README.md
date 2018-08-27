@@ -21,4 +21,5 @@ Links:
 - https://medium.com/fundbox-engineering/react-vs-vue-vs-angular-163f1ae7be56
 
 - https://jcp.org/en/home/index 
+- https://fontawesome.com/free
 ````
