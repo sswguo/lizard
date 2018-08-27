@@ -22,6 +22,19 @@ Datasource
  </xa-datasource>
 
 ````
+Security domain
+````
+<security-domain name="LIZARD.COM">
+  <authentication>
+    <login-module code="UsersRoles" flag="required">
+       <module-option name="usersProperties" value="users.properties"/>
+       <module-option name="rolesProperties" value="roles.properties"/>
+    </login-module>
+  </authentication>
+</security-domain>
+
+````
+
 #### Service Implementation 
 Add method in TaskResources in lizard-server-client  
 Add service method in TaskService/TaskServiceBean in lizard-server-ejb
