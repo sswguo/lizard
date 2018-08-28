@@ -154,10 +154,11 @@
                     </security>
                 </datasource>
                 <datasource jta="false" jndi-name="java:jboss/datasources/lizardDS" pool-name="lizardDS" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:mariadb://localhost:3306/lizard</connection-url>
+                    <connection-url>jdbc:mariadb://localhost:3307/lizard</connection-url>
                     <driver>mariadb</driver>
                     <security>
                         <user-name>root</user-name>
+                        <password>password</password>
                     </security>
                 </datasource>
                 <drivers>
