@@ -9,6 +9,18 @@
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 
+	<filter>
+    	<filter-name>RequestFilter</filter-name>
+    	<filter-class>com.lizard.app.filter.RequestFilter</filter-class>
+	</filter>
+	<filter-mapping>
+    	<filter-name>RequestFilter</filter-name>
+    	<url-pattern>/add</url-pattern>
+    	<url-pattern>/about</url-pattern>
+    	<url-pattern>/contact</url-pattern>
+    	<url-pattern>/examples</url-pattern>
+	</filter-mapping>
+
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>task</web-resource-name>
