@@ -34,15 +34,16 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
+                                <version>3.0.1</version>
 				<configuration>
 					<filtering>true</filtering>
 					<applicationName>Lizard</applicationName>
 					<displayName>Lizard</displayName>
 					<description>Lizard</description>
-					<version>6</version>
+					<version>7</version>
 					<filtering>true</filtering>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
-					<initializeInOrder>true</initializeInOrder>
+					<initializeInOrder>false</initializeInOrder>
 					<modules>
 						<ejbModule>
 							<groupId>com.lizard.app.server</groupId>
@@ -56,11 +57,38 @@
 					</modules>
 					<archive>
 						<manifestEntries>
-							<Dependencies>org.slf4j,org.dom4j</Dependencies>
+							<Dependencies>org.slf4j</Dependencies>
 						</manifestEntries>
 					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+        <profiles>
+           <profile>
+              <id>dev</id>
+              <build>
+              <plugins>
+                 <plugin>
+                   <groupId>org.wildfly.plugins</groupId>
+                   <artifactId>wildfly-maven-plugin</artifactId>
+                   <version>1.0.2.Final</version>
+                   <configuration>
+                      <filename>lizard.ear</filename>
+                      <username>jbosscli</username>
+                      <password>123qwe!@#</password>
+                   </configuration>
+                   <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                  </executions>
+                </plugin>
+              </plugins>
+              </build>
+           </profile>
+        </profiles>
 </project>
