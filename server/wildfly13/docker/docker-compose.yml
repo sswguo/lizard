@@ -1,0 +1,18 @@
+version: '2'
+services:
+  wildfly13:
+    image: "jboss/wildfly:13.0.0.Final"
+    networks:
+     - wildfly13
+    ports:
+     - "80:80"
+     - "8083:8080"
+    volumes:
+     - ./jboss-app:/var/lib/jboss-app
+     - ./jboss-as:/var/lib/jboss-as
+    environment:
+     - DEBUG=true
+
+networks:
+  wildfly13:
+    driver: bridge
