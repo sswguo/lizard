@@ -10,6 +10,23 @@ Wildfly: Download the wildfly [here](http://wildfly.org/downloads/) first, or us
 
 JDBC Driver: After downloading the wildfly, we need to install the related modules for dirver, see [here](https://github.com/sswguo/lizard/tree/master/server/wildfly13/modules)  
 
+(for how to add module)
+````
+[wguo@dhcp-136-71 ~]$ cd apps/wildfly-13.0.0.Final/
+[wguo@dhcp-136-71 wildfly-13.0.0.Final]$ bin/jboss-cli.sh 
+You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
+[disconnected /] connect
+Authenticating against security realm: ManagementRealm
+Username: jbosscli
+Password: 
+[standalone@localhost:9990 /] module 
+--help  --module-root-dir  --slot  add  remove   
+[standalone@localhost:9990 /] module add --name=com.mysql --dependencies=javax.api,javax.transaction.api --resources=/home/wguo/apps/wildfly-13.0.0.Final/modules/system/layers/base/com/mysql/main/mysql-connector-java-8.0.12.jar 
+[standalone@localhost:9990 /] reload 
+[standalone@localhost:9990 /] exit
+ 
+````
+
 Datasource: Developer can install db manually or run [the docker ones](https://github.com/sswguo/lizard/tree/master/db),
 then update the following configuration based on your db instance. 
 ````
