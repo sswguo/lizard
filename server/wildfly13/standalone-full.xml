@@ -168,6 +168,9 @@
                     <driver name="mariadb" module="org.mariadb.jdbc">
                         <xa-datasource-class>org.mariadb.jdbc.MySQLDataSource</xa-datasource-class>
                     </driver>
+                    <driver name="mysql" module="com.mysql">
+                        <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
+                    </driver>
                 </drivers>
             </datasources>
         </subsystem>
