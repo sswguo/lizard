@@ -6,7 +6,8 @@
 ````
 
 #### Deployment - JBossAS
-Datasource
+Datasource: Developer can install db manually or run the docker ones, then update the following configuration
+based on your db instance. 
 ````
  <xa-datasource jndi-name="java:jboss/datasources/lizardDS" pool-name="lizardPool" enabled="true">
      <xa-datasource-property name="URL">
