@@ -5,7 +5,11 @@
  mvn -Dhttps.protocols=TLSv1.2 clean install
 ````
 
-#### Deployment - JBossAS
+#### Deployment - Wildfly
+Wildfly: Download the wildfly [here](http://wildfly.org/downloads/) first, or use the [docker one](https://github.com/sswguo/lizard/tree/master/server/wildfly13/docker)  
+
+JDBC Driver: After downloading the wildfly, we need to install the related modules for dirver, see [here](https://github.com/sswguo/lizard/tree/master/server/wildfly13/modules)  
+
 Datasource: Developer can install db manually or run [the docker ones](https://github.com/sswguo/lizard/tree/master/db),
 then update the following configuration based on your db instance. 
 ````
