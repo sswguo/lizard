@@ -12,17 +12,11 @@ JDBC Driver: After downloading the wildfly, we need to install the related modul
 
 (for how to add module)
 ````
-[wguo@dhcp-136-71 ~]$ cd apps/wildfly-13.0.0.Final/
-[wguo@dhcp-136-71 wildfly-13.0.0.Final]$ bin/jboss-cli.sh 
+ wguo  ~  apps  wildfly-13.0.0.Final  bin/jboss-cli.sh 
 You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
 [disconnected /] connect
-Authenticating against security realm: ManagementRealm
-Username: jbosscli
-Password: 
-[standalone@localhost:9990 /] module 
---help  --module-root-dir  --slot  add  remove   
-[standalone@localhost:9990 /] module add --name=com.mysql --dependencies=javax.api,javax.transaction.api --resources=/home/wguo/apps/wildfly-13.0.0.Final/modules/system/layers/base/com/mysql/main/mysql-connector-java-8.0.12.jar 
-[standalone@localhost:9990 /] reload 
+[standalone@localhost:9990 /] module add --name=org.mariadb.jdbc --dependencies=javax.api,javax.transaction.api --resources=~/GitRepo/lizard/server/wildfly13/modules/org/mariadb/jdbc/main/mariadb-java-client-1.1.7.jar
+[standalone@localhost:9990 /] reload
 [standalone@localhost:9990 /] exit
  
 ````
