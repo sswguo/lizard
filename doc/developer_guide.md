@@ -30,18 +30,26 @@ Password:
 Datasource: Developer can install db manually or run [the docker ones](https://github.com/sswguo/lizard/tree/master/db),
 then update the following configuration based on your db instance. 
 ````
- <xa-datasource jndi-name="java:jboss/datasources/lizardDS" pool-name="lizardPool" enabled="true">
-     <xa-datasource-property name="URL">
-        jdbc:mysql://localhost:3306/lizard
-     </xa-datasource-property>
-     <xa-datasource-property name="PinGlobalTxToPhysicalConnection">
-        true
-     </xa-datasource-property>
-     <driver>com.mysql</driver>
-     <security>
-       <user-name>root</user-name>
-     </security>
- </xa-datasource>
+ <datasource jta="false" jndi-name="java:jboss/datasources/lizardDS" pool-name="lizardDS" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:mariadb://localhost:3307/lizard</connection-url>
+                    <driver>mariadb</driver>
+                    <security>
+                        <user-name>root</user-name>
+                        <password>password</password>
+                    </security>
+                </datasource>
+                <drivers>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="mariadb" module="org.mariadb.jdbc">
+                        <xa-datasource-class>org.mariadb.jdbc.MySQLDataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="mysql" module="com.mysql">
+                        <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
+                    </driver>
+                </drivers>
+
 
 ````
 Security domain
