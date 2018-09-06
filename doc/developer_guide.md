@@ -22,7 +22,7 @@ You are disconnected at the moment. Type 'connect' to connect to the server or '
 ````
 
 Datasource: Developer can install db manually or run [the docker ones](https://github.com/sswguo/lizard/tree/master/db),
-then update the following configuration based on your db instance. 
+then create database "lizard" and update the following configuration based on your db instance. 
 ````
  <datasource jta="false" jndi-name="java:jboss/datasources/lizardDS" pool-name="lizardDS" enabled="true" use-java-context="true">
       <connection-url>jdbc:mariadb://localhost:3307/lizard</connection-url>
