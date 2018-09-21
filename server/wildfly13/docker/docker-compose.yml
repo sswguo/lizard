@@ -10,6 +10,7 @@ services:
     volumes:
      - ./jboss-app:/var/lib/jboss-app
      - ./jboss-as:/var/lib/jboss-as
+    entrypoint: /bin/bash -c "tail -f /dev/null"
     environment:
      - DEBUG=true
 
